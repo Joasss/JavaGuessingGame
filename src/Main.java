@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class Main {
-    int userInput;
-    int computerNum = (int) (Math.random() * 11);
+    static int userInput;
+    static int computerNum = (int) (Math.random() * 11);
 
-    public void getInput() {
+    static void getInput() {
         Scanner numInput = new Scanner(System.in);
         System.out.println("Enter a number between 1 and 10.");
         try {
@@ -15,8 +15,7 @@ public class Main {
             getInput();
         }
     }
-
-    public void checkResults() {
+    static void checkResults() {
         if (userInput < 0 || userInput > 10) {
             System.out.println("Please enter a valid number between 1 and 10.");
             getInput();
@@ -36,8 +35,6 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-        Main object = new Main();
-        object.getInput();
-    }
+    public static void main(String[] args) { getInput(); }
+
 }
