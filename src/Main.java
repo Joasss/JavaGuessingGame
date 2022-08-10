@@ -4,7 +4,7 @@ class Main {
     int userGuess = 0;
 
     public void getInput() {
-        System.out.println("Please enter a number between 1-100 to guess.");
+        System.out.println("Guess the number:");
         Scanner inputUser = new Scanner(System.in);
         try {
             userGuess = inputUser.nextInt();
@@ -18,6 +18,7 @@ class Main {
         int computerNumber = (int) (Math.random() * 100 + 1);
         int guessCount = 0;
 
+        System.out.println("A number between 1 and 100 has been chosen.\nTry to guess it with as few lines as possible!");
         obj.getInput();
 
         while (obj.userGuess != computerNumber) {
@@ -29,10 +30,10 @@ class Main {
             guessCount++;
 
             if (computerNumber > obj.userGuess) {
-                System.out.println("The number is higher!");
+                System.out.println("The number is higher than " + obj.userGuess + "!");
                 obj.getInput();
             } else {
-                System.out.println("The number is lower!");
+                System.out.println("The number is lower than " + obj.userGuess + "!");
                 obj.getInput();
             }
         }
